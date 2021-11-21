@@ -59,13 +59,16 @@ class MainActivity : AppCompatActivity() {
                     Timber.tag("getListUsers").d("loading")
                 }
                 StatusUtil.SUCCESS -> {
+                    binding.swipeRefresh.isRefreshing = false
                     Timber.tag("getListUsers").d("success , \n${result.data}")
                     setDataUser(result.data ?: emptyList())
                 }
                 StatusUtil.ERROR -> {
+                    binding.swipeRefresh.isRefreshing = false
                     Timber.tag("getListUsers").d("error")
                 }
                 StatusUtil.CONNECTION_FAILED -> {
+                    binding.swipeRefresh.isRefreshing = false
                     Timber.tag("getListUsers").d("no connection")
                 }
             }
