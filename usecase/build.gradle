@@ -1,0 +1,12 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+}
+
+apply from :"../android_core_deps.gradle"
+
+dependencies {
+
+    implementation project(Modules.data)
+    implementation project(Modules.domain)
+}

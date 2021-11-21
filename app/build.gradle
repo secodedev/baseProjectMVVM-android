@@ -1,0 +1,51 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'kotlin-parcelize'
+    id 'androidx.navigation.safeargs.kotlin'
+}
+
+apply from: "../android_core_deps.gradle"
+apply from: "../android_app_deps.gradle"
+apply from: "../android_network_deps.gradle"
+
+android {
+
+    defaultConfig {
+        applicationId Versions.appId
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug{
+            debuggable true
+            applicationIdSuffix ".debug"
+        }
+    }
+    buildFeatures {
+        viewBinding = true
+    }
+    //    signingConfigs {
+    //        release {
+    //            storeFile file('keystore.jks')
+    //            storePassword 'password'
+    //            keyAlias 'ReleaseKeyAlias'
+    //            keyPassword 'password'
+    //        }
+    //    }
+}
+
+dependencies {
+
+    implementation project(Modules.data)
+    implementation project(Modules.domain)
+    implementation project(Modules.usecase)
+
+    implementation Libs.koinCore
+    implementation Libs.koinAndroid
+    implementation Libs.coil
+}

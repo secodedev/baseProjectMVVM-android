@@ -1,0 +1,7 @@
+dependencies {
+    implementation Libs.retrofit
+    implementation Libs.gson
+    implementation Libs.retrofitGsonConverter
+    implementation Libs.okHttp
+    implementation Libs.okHttpLogging
+}

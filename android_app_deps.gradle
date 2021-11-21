@@ -1,0 +1,17 @@
+dependencies {
+    // ANDROID
+    implementation AndroidLibs.coreKtx
+    implementation AndroidLibs.appCompat
+    implementation AndroidLibs.materialDesign
+    implementation AndroidLibs.constraintLayout
+
+    implementation AndroidLibs.supportLegacy
+    implementation AndroidLibs.lifecycleViewModel
+    implementation AndroidLibs.lifecycleRuntime
+    implementation AndroidLibs.lifecycleCommon
+    implementation AndroidLibs.livecycleLiveDataReactiveStream
+    implementation AndroidLibs.navigationUiKtx
+    implementation AndroidLibs.navigationFragmentKtx
+    implementation AndroidLibs.swipeRefreshLayout
+    implementation AndroidLibs.browser
+}
